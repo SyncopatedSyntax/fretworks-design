@@ -1,0 +1,30 @@
+{
+  "name": "@fretworks/design",
+  "version": "0.1.0",
+  "description": "Shared Fretworks design system — tokens, fonts, theory constants, and chrome components used across the toolbox apps.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Zak (SyncopatedSyntax)",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./styles.css": "./dist/styles.css",
+    "./tokens.css": "./dist/tokens.css",
+    "./fonts.css": "./dist/fonts.css",
+    "./components.css": "./dist/components.css"
+  },
+  "scripts": {
+    "gen": "node scripts/gen-tokens.mjs",
+    "build": "node scripts/gen-tokens.mjs && node scripts/build.mjs",
+    "prepare": "node scripts/gen-tokens.mjs && node scripts/build.mjs"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.2"
+  }
+}

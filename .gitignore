@@ -1,0 +1,7 @@
+node_modules/
+# dist/ is built by the `prepare` script on install (incl. git installs),
+# so it does not need to be committed.
+dist/
+# Generated from tokens.json by scripts/gen-tokens.mjs
+src/tokens.css
+src/tokens.js
