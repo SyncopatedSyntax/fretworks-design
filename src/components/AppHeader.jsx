@@ -23,7 +23,6 @@ export function AppHeader({ toolKey, children }) {
         </button>
 
         <a className="fw-appheader-brand" href={HOME_PATH} aria-label={`${tool?.name || "Fretworks"} — all tools`}>
-          <span className="fw-appheader-emoji" aria-hidden="true">{tool?.emoji}</span>
           <span className="fw-appheader-name">{tool?.name}</span>
         </a>
 
