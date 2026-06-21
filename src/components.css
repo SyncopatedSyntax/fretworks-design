@@ -161,9 +161,14 @@ a.fw-card:hover {
   margin-right: auto;
   min-width: 0;
 }
+.fw-appheader-emoji {
+  font-size: var(--fs-lg);
+  line-height: 1;
+  flex-shrink: 0;
+}
 .fw-appheader-name {
-  font-family: var(--font-heading);
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-weight: 600;
   font-size: var(--fs-base);
   letter-spacing: -0.01em;
   white-space: nowrap;
@@ -171,10 +176,14 @@ a.fw-card:hover {
   text-overflow: ellipsis;
 }
 .fw-appheader-right { display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0; }
-/* On phones, drop the brand mark and tighten padding so the full tool name fits. */
+/* On phones, tighten the brand + shrink the title a touch so the emoji and the
+   full tool name fit alongside the app control + Ko-fi. */
 @media (max-width: 480px) {
-  .fw-appheader-brand > svg { display: none; }
   .fw-appheader { padding-left: 10px; padding-right: 10px; gap: 8px; }
+  .fw-appheader-brand { gap: 6px; }
+  .fw-appheader-emoji { font-size: var(--fs-base); }
+  .fw-appheader-name { font-size: var(--fs-sm); }
+  .fw-appheader-actions .fw-header-btn { padding-left: 9px; padding-right: 9px; }
 }
 .fw-appheader-actions { display: inline-flex; align-items: center; gap: 6px; }
 .fw-appheader-kofi {

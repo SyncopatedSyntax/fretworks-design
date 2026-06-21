@@ -3,7 +3,6 @@
 // LogoMark + the tool's registry name. `children` is the app-specific control
 // slot (e.g. a Degrees toggle). Ko-fi collapses to a ☕ icon on narrow screens.
 import { useState } from "react";
-import { LogoMark } from "../logo.jsx";
 import { ToolDrawer } from "./ToolDrawer.jsx";
 import { KOFI, HOME_PATH, toolByKey } from "../tools.js";
 
@@ -24,7 +23,7 @@ export function AppHeader({ toolKey, children }) {
         </button>
 
         <a className="fw-appheader-brand" href={HOME_PATH} aria-label={`${tool?.name || "Fretworks"} — all tools`}>
-          <LogoMark size={22} />
+          <span className="fw-appheader-emoji" aria-hidden="true">{tool?.emoji}</span>
           <span className="fw-appheader-name">{tool?.name}</span>
         </a>
 
