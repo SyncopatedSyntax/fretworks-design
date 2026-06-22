@@ -323,8 +323,32 @@ a.fw-card:hover {
 .fw-drawer-emoji { font-size: var(--fs-xl); line-height: 1; }
 .fw-drawer-name { font-family: var(--font-heading); font-weight: 600; font-size: var(--fs-base); }
 .fw-drawer-sep { height: 1px; background: var(--border); margin: 10px 6px; list-style: none; }
-.fw-drawer-kofi {
+.fw-drawer-foot {
   margin: auto 12px calc(14px + env(safe-area-inset-bottom, 0px));
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.fw-drawer-update {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 10px 12px;
+  transition: 0.18s;
+}
+.fw-drawer-update:hover { color: var(--accent); border-color: var(--accent); }
+.fw-drawer-update:disabled { opacity: 0.6; cursor: default; }
+.fw-drawer-kofi {
+  margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;

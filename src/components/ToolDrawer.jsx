@@ -2,10 +2,28 @@
 // because tools live in separate Vercel zones — switching is a full navigation
 // to another same-origin path (/chord, /diatonic, …). `current` highlights the
 // active tool. Controlled via `open` / `onClose`.
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { TOOLS, HOME_PATH, BRAND, KOFI } from "../tools.js";
 
+// Force-fetch the latest deploy: ask the (shell-owned, scope "/") service worker
+// to check for a new version, then reload. Navigations are network-first, so the
+// reload pulls fresh HTML + assets even before the new worker fully takes over.
+function updateApp(setBusy) {
+  setBusy(true);
+  const reload = () => window.location.reload();
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker
+      .getRegistration()
+      .then((reg) => (reg ? reg.update() : null))
+      .catch(() => {})
+      .finally(reload);
+  } else {
+    reload();
+  }
+}
+
 export function ToolDrawer({ open, onClose, current }) {
+  const [busy, setBusy] = useState(false);
   // Close on Escape; lock body scroll while open.
   useEffect(() => {
     if (!open) return;
@@ -60,14 +78,24 @@ export function ToolDrawer({ open, onClose, current }) {
             </a>
           </li>
         </ul>
-        <a
-          className="fw-drawer-kofi"
-          href={KOFI}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          ☕ Support on Ko-fi
-        </a>
+        <div className="fw-drawer-foot">
+          <button
+            className="fw-drawer-update"
+            onClick={() => updateApp(setBusy)}
+            disabled={busy}
+            aria-label="Update the app to the latest version"
+          >
+            {busy ? "↻ Updating…" : "↻ Update app"}
+          </button>
+          <a
+            className="fw-drawer-kofi"
+            href={KOFI}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ☕ Support on Ko-fi
+          </a>
+        </div>
       </nav>
     </div>
   );
