@@ -293,7 +293,10 @@ a.fw-card:hover {
   font-weight: 600;
   font-size: var(--fs-lg);
   color: var(--text);
+  text-decoration: none;
+  transition: color 0.18s;
 }
+.fw-drawer-title:hover { color: var(--accent); }
 .fw-drawer-close {
   background: transparent;
   border: none;
@@ -329,7 +332,8 @@ a.fw-card:hover {
   flex-direction: column;
   gap: 8px;
 }
-.fw-drawer-update {
+.fw-drawer-update,
+.fw-drawer-share {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -345,7 +349,8 @@ a.fw-card:hover {
   padding: 10px 12px;
   transition: 0.18s;
 }
-.fw-drawer-update:hover { color: var(--accent); border-color: var(--accent); }
+.fw-drawer-update:hover,
+.fw-drawer-share:hover { color: var(--accent); border-color: var(--accent); }
 .fw-drawer-update:disabled { opacity: 0.6; cursor: default; }
 .fw-drawer-kofi {
   margin: 0;

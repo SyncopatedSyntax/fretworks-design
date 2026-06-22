@@ -22,8 +22,29 @@ function updateApp(setBusy) {
   }
 }
 
+// Share the toolbox: native share sheet where available (iOS/Android), else copy
+// the link to the clipboard with a brief confirmation.
+function shareToolbox(setCopied) {
+  const url = window.location.origin + "/";
+  const data = { title: BRAND, text: `${BRAND} — a free toolbox of guitar trainers.`, url };
+  if (navigator.share) {
+    navigator.share(data).catch(() => {});
+    return;
+  }
+  if (navigator.clipboard) {
+    navigator.clipboard
+      .writeText(url)
+      .then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      })
+      .catch(() => {});
+  }
+}
+
 export function ToolDrawer({ open, onClose, current }) {
   const [busy, setBusy] = useState(false);
+  const [copied, setCopied] = useState(false);
   // Close on Escape; lock body scroll while open.
   useEffect(() => {
     if (!open) return;
@@ -44,7 +65,7 @@ export function ToolDrawer({ open, onClose, current }) {
       <div className="fw-drawer-overlay" onClick={onClose} />
       <nav className="fw-drawer" aria-label="Tools">
         <div className="fw-drawer-head">
-          <span className="fw-drawer-title">{BRAND}</span>
+          <a className="fw-drawer-title" href="/" aria-label={`${BRAND} home`}>{BRAND}</a>
           <button className="fw-drawer-close" onClick={onClose} aria-label="Close menu">
             ✕
           </button>
@@ -86,6 +107,13 @@ export function ToolDrawer({ open, onClose, current }) {
             aria-label="Update the app to the latest version"
           >
             {busy ? "↻ Updating…" : "↻ Update app"}
+          </button>
+          <button
+            className="fw-drawer-share"
+            onClick={() => shareToolbox(setCopied)}
+            aria-label="Share Fretworks with others"
+          >
+            {copied ? "✓ Link copied" : "↗ Share toolbox"}
           </button>
           <a
             className="fw-drawer-kofi"
