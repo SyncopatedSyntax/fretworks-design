@@ -56,6 +56,17 @@ export const TOOLS = [
       "Play the altered sound over a V7 chord and see exactly how its tensions resolve into the chord you’re landing on.",
     chips: ["V7alt → I", "Target tones", "Guide tones", "5 positions"],
   },
+  {
+    key: "circle",
+    name: "Circle of Fifths Trainer",
+    emoji: "🧭",
+    accent: "#f0a05a", // warm amber
+    path: "/circle/",
+    skill: "All levels",
+    blurb:
+      "See how keys, chords and sharps/flats connect — then use the circle to write progressions that work.",
+    chips: ["Keys & chords", "Songwriting", "Sharps/flats", "Quiz"],
+  },
 ];
 
 // Suggested learning order for the brochure's "learning path" section.
