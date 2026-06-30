@@ -67,6 +67,17 @@ export const TOOLS = [
       "See how keys, chords and sharps/flats connect — then use the circle to write progressions that work.",
     chips: ["Keys & chords", "Songwriting", "Sharps/flats", "Quiz"],
   },
+  {
+    key: "triads",
+    name: "Triad Trainer",
+    emoji: "🔺",
+    accent: "#4ade80", // green
+    path: "/triads/",
+    skill: "Beginner–Intermediate",
+    blurb:
+      "Learn every triad shape across the neck — all 4 qualities, 3 inversions, 4 string sets — with spaced-repetition practice.",
+    chips: ["Closed triads", "All inversions", "SRS practice", "Quiz"],
+  },
 ];
 
 // Suggested learning order for the brochure's "learning path" section.
