@@ -10,6 +10,11 @@ export const KOFI = "https://ko-fi.com/syncopatedsyntax";
 // Home / launcher route (also the installed PWA start_url).
 export const HOME_PATH = "/app";
 
+// Order = the suggested learning path: chord vocabulary, then the movable
+// shapes underneath it, then key/harmony theory, then applying shapes across
+// the neck within a key, then modal colour for soloing, then advanced
+// tension/resolution. Drives the toolbox grid, the launcher, and the
+// ToolDrawer, in addition to LEARNING_PATH below — keep them in this order.
 export const TOOLS = [
   {
     key: "chord",
@@ -22,6 +27,28 @@ export const TOOLS = [
       "Build a working chord vocabulary with spaced-repetition practice, quizzes, and progressions of the day.",
     chips: ["SRS practice", "Chord library", "Audio", "Progressions"],
     note: "Start here",
+  },
+  {
+    key: "triads",
+    name: "Triad Trainer",
+    emoji: "🔺",
+    accent: "#4ade80", // green
+    path: "/triads/",
+    skill: "Beginner–Intermediate",
+    blurb:
+      "Learn every triad shape across the neck — all 4 qualities, 3 inversions, 4 string sets — with spaced-repetition practice.",
+    chips: ["Closed triads", "All inversions", "SRS practice", "Quiz"],
+  },
+  {
+    key: "circle",
+    name: "Circle of Fifths Trainer",
+    emoji: "🧭",
+    accent: "#f0a05a", // warm amber
+    path: "/circle/",
+    skill: "All levels",
+    blurb:
+      "See how keys, chords and sharps/flats connect — then use the circle to write progressions that work.",
+    chips: ["Keys & chords", "Songwriting", "Sharps/flats", "Quiz"],
   },
   {
     key: "diatonic",
@@ -56,33 +83,14 @@ export const TOOLS = [
       "Play the altered sound over a V7 chord and see exactly how its tensions resolve into the chord you’re landing on.",
     chips: ["V7alt → I", "Target tones", "Guide tones", "5 positions"],
   },
-  {
-    key: "circle",
-    name: "Circle of Fifths Trainer",
-    emoji: "🧭",
-    accent: "#f0a05a", // warm amber
-    path: "/circle/",
-    skill: "All levels",
-    blurb:
-      "See how keys, chords and sharps/flats connect — then use the circle to write progressions that work.",
-    chips: ["Keys & chords", "Songwriting", "Sharps/flats", "Quiz"],
-  },
-  {
-    key: "triads",
-    name: "Triad Trainer",
-    emoji: "🔺",
-    accent: "#4ade80", // green
-    path: "/triads/",
-    skill: "Beginner–Intermediate",
-    blurb:
-      "Learn every triad shape across the neck — all 4 qualities, 3 inversions, 4 string sets — with spaced-repetition practice.",
-    chips: ["Closed triads", "All inversions", "SRS practice", "Quiz"],
-  },
 ];
 
-// Suggested learning order for the brochure's "learning path" section.
+// Suggested learning order for the brochure's "learning path" section — every
+// tool, in the same order as TOOLS above.
 export const LEARNING_PATH = [
   { key: "chord", why: "Learn the chords and build a daily practice habit." },
+  { key: "triads", why: "Master the movable shapes that make up those chords." },
+  { key: "circle", why: "Understand how keys and chords connect." },
   { key: "diatonic", why: "Place those chords across the entire neck." },
   { key: "mm", why: "Add modal colour for soloing over them." },
   { key: "alt", why: "Bring tension to dominant chords — and resolve it." },
