@@ -43,6 +43,14 @@
 .fw-btn-kofi { background: #ff5e5b; color: #fff; border-color: #ff5e5b; }
 .fw-btn-kofi:hover { filter: brightness(1.06); }
 
+/* ── Progress backup (export/import) ────────────────────────────────────── */
+.fw-backup { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.fw-backup-file { position: relative; overflow: hidden; }
+.fw-backup-file input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.fw-backup-msg { font-family: var(--font-heading); font-size: var(--fs-xs); font-weight: 600; }
+.fw-backup-msg.ok { color: #4ade80; }
+.fw-backup-msg.err { color: #ff6b6b; }
+
 /* ── Pills / chips ───────────────────────────────────────────────────────── */
 .fw-pill {
   display: inline-block;

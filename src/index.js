@@ -13,3 +13,5 @@ export { AppHeader } from "./components/AppHeader.jsx";
 export { TabBar } from "./components/TabBar.jsx";
 export { ToolDrawer } from "./components/ToolDrawer.jsx";
 export { InstallPrompt } from "./components/InstallPrompt.jsx";
+export { ProgressBackup } from "./components/ProgressBackup.jsx";
+export { exportProgress, importProgress } from "./backup.js";
