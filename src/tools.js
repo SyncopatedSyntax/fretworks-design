@@ -29,6 +29,17 @@ export const TOOLS = [
     note: "Start here",
   },
   {
+    key: "focus",
+    name: "Focused Chord Trainer",
+    emoji: "🎯",
+    accent: "#4ecdc4", // drop-2 teal
+    path: "/focus/",
+    skill: "All levels",
+    blurb:
+      "Build your own chord library one shape at a time, then drill it with the same spaced repetition and quizzes.",
+    chips: ["Your own library", "Chord editor", "SRS practice", "Quiz"],
+  },
+  {
     key: "triads",
     name: "Triad Trainer",
     emoji: "🔺",
@@ -89,6 +100,7 @@ export const TOOLS = [
 // tool, in the same order as TOOLS above.
 export const LEARNING_PATH = [
   { key: "chord", why: "Learn the chords and build a daily practice habit." },
+  { key: "focus", why: "Narrow the practice down to a library you build yourself." },
   { key: "triads", why: "Master the movable shapes that make up those chords." },
   { key: "circle", why: "Understand how keys and chords connect." },
   { key: "diatonic", why: "Place those chords across the entire neck." },
