@@ -4,6 +4,7 @@
 // active tool. Controlled via `open` / `onClose`.
 import { useEffect, useState } from "react";
 import { TOOLS, HOME_PATH, BRAND, KOFI } from "../tools.js";
+import { useWakeLock } from "../useWakeLock.js";
 
 // Force-fetch the latest deploy: ask the (shell-owned, scope "/") service worker
 // to check for a new version, then reload. Navigations are network-first, so the
@@ -45,6 +46,11 @@ function shareToolbox(setCopied) {
 export function ToolDrawer({ open, onClose, current }) {
   const [busy, setBusy] = useState(false);
   const [copied, setCopied] = useState(false);
+  // The drawer is rendered by AppHeader whether it is open or not — only a CSS
+  // class changes — so it is the shared component that stays mounted for the
+  // life of the page. That makes it the right owner of a lock that has to
+  // outlive the menu being closed.
+  const wake = useWakeLock();
   // Close on Escape; lock body scroll while open.
   useEffect(() => {
     if (!open) return;
@@ -100,6 +106,19 @@ export function ToolDrawer({ open, onClose, current }) {
           </li>
         </ul>
         <div className="fw-drawer-foot">
+          {/* Hidden entirely where the API is missing — a toggle that silently
+              does nothing is worse than no toggle. That is the pre-18.4
+              installed-PWA case on iOS. */}
+          {wake.supported && (
+            <button
+              className={`fw-drawer-wake${wake.enabled ? " is-on" : ""}`}
+              onClick={wake.toggle}
+              aria-pressed={wake.enabled}
+              aria-label="Keep the screen awake while practising"
+            >
+              {wake.enabled ? "☀ Screen stays on" : "☾ Keep screen on"}
+            </button>
+          )}
           <button
             className="fw-drawer-update"
             onClick={() => updateApp(setBusy)}

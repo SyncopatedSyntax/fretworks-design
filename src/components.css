@@ -341,7 +341,8 @@ a.fw-card:hover {
   gap: 8px;
 }
 .fw-drawer-update,
-.fw-drawer-share {
+.fw-drawer-share,
+.fw-drawer-wake {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -358,7 +359,11 @@ a.fw-card:hover {
   transition: 0.18s;
 }
 .fw-drawer-update:hover,
-.fw-drawer-share:hover { color: var(--accent); border-color: var(--accent); }
+.fw-drawer-share:hover,
+.fw-drawer-wake:hover { color: var(--accent); border-color: var(--accent); }
+/* On is a held state, not a hover — it stays lit so you can see at a glance
+   that the screen is being kept awake. */
+.fw-drawer-wake.is-on { color: var(--accent); border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
 .fw-drawer-update:disabled { opacity: 0.6; cursor: default; }
 .fw-drawer-kofi {
   margin: 0;
