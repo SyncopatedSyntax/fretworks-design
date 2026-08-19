@@ -94,6 +94,17 @@ export const TOOLS = [
       "Play the altered sound over a V7 chord and see exactly how its tensions resolve into the chord you’re landing on.",
     chips: ["V7alt → I", "Target tones", "Guide tones", "5 positions"],
   },
+  {
+    key: "standards",
+    name: "Standards Trainer",
+    emoji: "🎺",
+    accent: "#a78bfa", // violet
+    path: "/standards/",
+    skill: "Intermediate",
+    blurb:
+      "Learn jazz standards properly — head, changes, form and soloing, each on its own review schedule — until you can call one at a jam.",
+    chips: ["25-tune core path", "Four skills per tune", "SRS reviews", "Your own tunes"],
+  },
 ];
 
 // Suggested learning order for the brochure's "learning path" section — every
@@ -106,6 +117,7 @@ export const LEARNING_PATH = [
   { key: "diatonic", why: "Place those chords across the entire neck." },
   { key: "mm", why: "Add modal colour for soloing over them." },
   { key: "alt", why: "Bring tension to dominant chords — and resolve it." },
+  { key: "standards", why: "Put all of it to work on real tunes, and get jam ready." },
 ];
 
 export const toolByKey = (key) => TOOLS.find((t) => t.key === key);
