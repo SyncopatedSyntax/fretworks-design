@@ -62,6 +62,17 @@ export const TOOLS = [
     chips: ["Keys & chords", "Songwriting", "Sharps/flats", "Quiz"],
   },
   {
+    key: "notes",
+    name: "Note Trainer",
+    emoji: "📍",
+    accent: "#fb923c", // fretboard orange
+    path: "/notes/",
+    skill: "Beginner–Intermediate",
+    blurb:
+      "Know where every note is. Play them on the real neck — the app listens — one string at a time until you find any note without counting.",
+    chips: ["Play, don’t tap", "String by string", "SRS practice", "Speed tier"],
+  },
+  {
     key: "diatonic",
     name: "Diatonic Chord Trainer",
     emoji: "🗺️",
@@ -114,6 +125,7 @@ export const LEARNING_PATH = [
   { key: "focus", why: "Narrow the practice down to a library you build yourself." },
   { key: "triads", why: "Master the movable shapes that make up those chords." },
   { key: "circle", why: "Understand how keys and chords connect." },
+  { key: "notes", why: "Know where every note actually is, so the shapes stop being blind." },
   { key: "diatonic", why: "Place those chords across the entire neck." },
   { key: "mm", why: "Add modal colour for soloing over them." },
   { key: "alt", why: "Bring tension to dominant chords — and resolve it." },
