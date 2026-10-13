@@ -84,6 +84,17 @@ export const TOOLS = [
     chips: ["Fretboard shapes", "Root positions", "Diatonic harmony"],
   },
   {
+    key: "blues",
+    name: "Blues Scale Trainer",
+    emoji: "🎷",
+    accent: "#818cf8", // blue-note indigo
+    path: "/blues/",
+    skill: "Beginner–Intermediate",
+    blurb:
+      "Learn the blues scale in five boxes and the joins between them, see it against major, minor and both pentatonics, and hear what its one blue note does over a 12-bar.",
+    chips: ["Minor & major blues", "The blue note", "Compare scales", "12-bar view"],
+  },
+  {
     key: "mm",
     name: "Melodic Minor Trainer",
     emoji: "🎼",
@@ -127,6 +138,7 @@ export const LEARNING_PATH = [
   { key: "circle", why: "Understand how keys and chords connect." },
   { key: "notes", why: "Know where every note actually is, so the shapes stop being blind." },
   { key: "diatonic", why: "Place those chords across the entire neck." },
+  { key: "blues", why: "Solo with the scale the blues is built on, and hear what its one extra note does." },
   { key: "mm", why: "Add modal colour for soloing over them." },
   { key: "alt", why: "Bring tension to dominant chords — and resolve it." },
   { key: "standards", why: "Put all of it to work on real tunes, and get jam ready." },
