@@ -18,7 +18,8 @@
   "scripts": {
     "gen": "node scripts/gen-tokens.mjs",
     "build": "node scripts/gen-tokens.mjs && node scripts/build.mjs",
-    "prepare": "node scripts/gen-tokens.mjs && node scripts/build.mjs"
+    "prepare": "node scripts/gen-tokens.mjs && node scripts/build.mjs",
+    "test": "node scripts/test-sync.mjs"
   },
   "peerDependencies": {
     "react": "^18.3.1",

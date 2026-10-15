@@ -16,3 +16,9 @@ export { InstallPrompt } from "./components/InstallPrompt.jsx";
 export { ProgressBackup } from "./components/ProgressBackup.jsx";
 export { exportProgress, importProgress } from "./backup.js";
 export { useWakeLock, wakeLockSupported } from "./useWakeLock.js";
+// Accounts and sync. Importing the package boots the page's sync engine
+// (sync/client.js) — that has to happen before an app reads its storage.
+export { createSyncEngine } from "./sync/engine.js";
+export { mergeValue, isSyncedKey } from "./sync/merge.js";
+export { getSync, startSync, useSyncState, account } from "./sync/client.js";
+export { SyncStatus, SyncHeldNote, ACCOUNT_PATH } from "./components/SyncStatus.jsx";

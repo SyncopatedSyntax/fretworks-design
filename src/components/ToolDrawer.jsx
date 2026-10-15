@@ -5,6 +5,8 @@
 import { useEffect, useState } from "react";
 import { TOOLS, HOME_PATH, BRAND, KOFI } from "../tools.js";
 import { useWakeLock } from "../useWakeLock.js";
+import { startSync } from "../sync/client.js";
+import { SyncStatus, SyncHeldNote } from "./SyncStatus.jsx";
 
 // Force-fetch the latest deploy: ask the (shell-owned, scope "/") service worker
 // to check for a new version, then reload. Navigations are network-first, so the
@@ -51,6 +53,9 @@ export function ToolDrawer({ open, onClose, current }) {
   // life of the page. That makes it the right owner of a lock that has to
   // outlive the menu being closed.
   const wake = useWakeLock();
+  // Same reasoning starts sync here: the drawer is on every page, for the life
+  // of the page. startSync() is idempotent.
+  useEffect(() => { startSync(); }, []);
   // Close on Escape; lock body scroll while open.
   useEffect(() => {
     if (!open) return;
@@ -67,6 +72,8 @@ export function ToolDrawer({ open, onClose, current }) {
   }, [open, onClose]);
 
   return (
+    <>
+    <SyncHeldNote />
     <div className={`fw-drawer-root${open ? " is-open" : ""}`} aria-hidden={!open}>
       <div className="fw-drawer-overlay" onClick={onClose} />
       <nav className="fw-drawer" aria-label="Tools">
@@ -76,6 +83,7 @@ export function ToolDrawer({ open, onClose, current }) {
             ✕
           </button>
         </div>
+        <SyncStatus />
         <ul className="fw-drawer-list">
           {TOOLS.map((t) => {
             const active = t.key === current;
@@ -145,5 +153,6 @@ export function ToolDrawer({ open, onClose, current }) {
         </div>
       </nav>
     </div>
+    </>
   );
 }

@@ -18,6 +18,7 @@ export const HOME_PATH = "/app";
 export const TOOLS = [
   {
     key: "chord",
+    storage: "ct_", // localStorage prefix — sync uses it to know which keys belong to the open app
     name: "Chord Trainer",
     emoji: "🎸",
     accent: "#ffd93d", // major-group gold
@@ -30,6 +31,7 @@ export const TOOLS = [
   },
   {
     key: "focus",
+    storage: "fct_",
     name: "Focused Chord Trainer",
     emoji: "🎯",
     accent: "#4ecdc4", // drop-2 teal
@@ -41,6 +43,7 @@ export const TOOLS = [
   },
   {
     key: "triads",
+    storage: "tri_",
     name: "Triad Trainer",
     emoji: "🔺",
     accent: "#4ade80", // green
@@ -52,6 +55,7 @@ export const TOOLS = [
   },
   {
     key: "circle",
+    storage: "cof_",
     name: "Circle of Fifths Trainer",
     emoji: "🧭",
     accent: "#f0a05a", // warm amber
@@ -63,6 +67,7 @@ export const TOOLS = [
   },
   {
     key: "notes",
+    storage: "nt_",
     name: "Note Trainer",
     emoji: "📍",
     accent: "#fb923c", // fretboard orange
@@ -74,6 +79,7 @@ export const TOOLS = [
   },
   {
     key: "diatonic",
+    storage: "dc_",
     name: "Diatonic Chord Trainer",
     emoji: "🗺️",
     accent: "#ff6b6b", // major-chord red
@@ -85,6 +91,7 @@ export const TOOLS = [
   },
   {
     key: "blues",
+    storage: "bs_",
     name: "Blues Scale Trainer",
     emoji: "🎷",
     accent: "#818cf8", // blue-note indigo
@@ -96,6 +103,7 @@ export const TOOLS = [
   },
   {
     key: "mm",
+    storage: "mm_",
     name: "Melodic Minor Trainer",
     emoji: "🎼",
     accent: "#74b9ff", // key-selector blue
@@ -107,6 +115,7 @@ export const TOOLS = [
   },
   {
     key: "alt",
+    storage: "at_",
     name: "Altered Scale Trainer",
     emoji: "⚡",
     accent: "#2dd4bf", // resolution teal
@@ -118,6 +127,7 @@ export const TOOLS = [
   },
   {
     key: "standards",
+    storage: "js_",
     name: "Standards Trainer",
     emoji: "🎺",
     accent: "#a78bfa", // violet
