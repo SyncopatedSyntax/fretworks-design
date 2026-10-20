@@ -102,6 +102,18 @@ export const TOOLS = [
     chips: ["Minor & major blues", "The blue note", "Compare scales", "12-bar view"],
   },
   {
+    key: "major",
+    storage: "mj_",
+    name: "Major Scale Trainer",
+    emoji: "☀️",
+    accent: "#22d3ee", // sky cyan
+    path: "/major/",
+    skill: "Beginner–Intermediate",
+    blurb:
+      "Learn the major scale in five CAGED shapes and its seven modes, see what its 4 and 7 do against Mixolydian, Lydian and the pentatonic, and drill it with spaced repetition.",
+    chips: ["5 shapes + 3nps", "7 modes", "Chords of the key", "SRS practice"],
+  },
+  {
     key: "nm",
     storage: "nm_",
     name: "Natural Minor Trainer",
@@ -173,6 +185,7 @@ export const LEARNING_PATH = [
   { key: "notes", why: "Know where every note actually is, so the shapes stop being blind." },
   { key: "diatonic", why: "Place those chords across the entire neck." },
   { key: "blues", why: "Solo with the scale the blues is built on, and hear what its one extra note does." },
+  { key: "major", why: "Learn the scale everything else is measured against, in the same five shapes the minors use." },
   { key: "nm", why: "Learn the minor scale itself, and the seven modes that live inside it." },
   { key: "hm", why: "Raise one note and the minor key gets a real V7 — plus a set of exotic modes." },
   { key: "mm", why: "Add modal colour for soloing over them." },
