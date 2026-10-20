@@ -102,6 +102,30 @@ export const TOOLS = [
     chips: ["Minor & major blues", "The blue note", "Compare scales", "12-bar view"],
   },
   {
+    key: "nm",
+    storage: "nm_",
+    name: "Natural Minor Trainer",
+    emoji: "🌙",
+    accent: "#f472b6", // rose pink
+    path: "/natural-minor/",
+    skill: "Beginner–Intermediate",
+    blurb:
+      "Learn the natural minor scale in five shapes and its seven modes, see where it differs from harmonic and melodic minor, and drill it with spaced repetition.",
+    chips: ["5 shapes + 3nps", "7 modes", "Compare minors", "SRS practice"],
+  },
+  {
+    key: "hm",
+    storage: "hm_",
+    name: "Harmonic Minor Trainer",
+    emoji: "🎻",
+    accent: "#a3e635", // lime
+    path: "/harmonic-minor/",
+    skill: "Intermediate",
+    blurb:
+      "Learn harmonic minor — the natural minor with a raised 7th — in five shapes and seven modes, and hear the V7 it gives a minor key.",
+    chips: ["The raised 7th", "7 modes", "Compare minors", "SRS practice"],
+  },
+  {
     key: "mm",
     storage: "mm_",
     name: "Melodic Minor Trainer",
@@ -149,6 +173,8 @@ export const LEARNING_PATH = [
   { key: "notes", why: "Know where every note actually is, so the shapes stop being blind." },
   { key: "diatonic", why: "Place those chords across the entire neck." },
   { key: "blues", why: "Solo with the scale the blues is built on, and hear what its one extra note does." },
+  { key: "nm", why: "Learn the minor scale itself, and the seven modes that live inside it." },
+  { key: "hm", why: "Raise one note and the minor key gets a real V7 — plus a set of exotic modes." },
   { key: "mm", why: "Add modal colour for soloing over them." },
   { key: "alt", why: "Bring tension to dominant chords — and resolve it." },
   { key: "standards", why: "Put all of it to work on real tunes, and get jam ready." },
