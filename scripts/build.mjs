@@ -2,7 +2,7 @@
 // bundled to ESM so the 5 consuming apps can import plain JS (no JSX transform
 // needed inside node_modules). CSS files are concatenated/copied as-is.
 import { build } from "esbuild";
-import { readFileSync, writeFileSync, mkdirSync, copyFileSync } from "node:fs";
+import { writeFileSync, mkdirSync, copyFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
