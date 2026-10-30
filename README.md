@@ -14,7 +14,7 @@ cross-zone chrome (top bar, tool drawer, install prompt).
 | `@fretworks/design/components.css` | Styles for the `fw-*` components |
 | `@fretworks/design/styles.css` | Convenience bundle = fonts + tokens + components |
 | `DC`, `NOTE_NAMES`, `OPEN_MIDI`, … | Music-theory constants (from `theory.js`) |
-| `TOOLS`, `HOME_PATH`, `LEARNING_PATH`, `KOFI`, `BRAND` | Tool registry (`tools.js`) |
+| `TOOLS`, `TOOL_GROUPS`, `START_PATHS`, `HOME_PATH`, `KOFI`, `BRAND` | Tool registry (`tools.js`) — `npm test` checks it |
 | `TopBar`, `ToolDrawer`, `Button`, `Card`, `Pill`, `InstallPrompt`, `LogoMark` | React components |
 
 ## Usage
