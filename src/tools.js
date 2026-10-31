@@ -190,7 +190,7 @@ export const TOOLS = [
     skill: "Intermediate",
     blurb:
       "Learn jazz standards properly — head, changes, form and soloing, each on its own review schedule — until you can call one at a jam.",
-    chips: ["40-tune core path", "Four skills per tune", "SRS reviews"],
+    chips: ["44-tune core path", "Four skills per tune", "SRS reviews"],
   },
 ];
 
